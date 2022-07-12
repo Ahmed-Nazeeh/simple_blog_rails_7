@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_login
+  before_action :require_user, except: [:index]
   def index
     @posts = Post.all
     #byebug
@@ -51,9 +51,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by(id: params[:id])
-    @post.destroy
-    redirect_to posts_path, :notice => "Your post has been deleted"
+    if logged_in?
+      @post = Post.find_by(id: params[:id])
+      @post.destroy
+      redirect_to posts_path, :notice => "Your post has been deleted"
+    end
   end
 
   private 
@@ -62,8 +64,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body, :user_id)
   end
 
-  def require_login
-    user = User.find_by(id: session[:user_id])
-    redirect_to new_login_path unless user 
-  end
+  # def require_login
+  #   user = User.find_by(id: session[:user_id])
+  #   redirect_to new_login_path unless user 
+  # end
 end
