@@ -1,0 +1,12 @@
+
+<div class="tbar">
+    <%=link_to "Blog", root_path, class: "logo" %>
+    <% if logged_in? %>
+        <strong>user:</strong><%= current_user.email %>
+    <% else %>
+        <%= link_to "LogIn", new_login_path, class: "lnk" %>
+        <%= link_to "Register", new_registration_path, class: "lnk" %>
+    <% end %>
+</div>
+
+

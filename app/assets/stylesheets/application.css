@@ -29,7 +29,7 @@
 }
 
 .lnk {
-    font-size: x-large; 
+    font-size: large; 
     font-weight: bold;
     text-decoration: none;
 
@@ -40,3 +40,27 @@
     display: inline-block;
 }
 
+.tbar {
+    padding-top: 10px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align-last: justify;
+
+}
+
+
+.logo {
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}

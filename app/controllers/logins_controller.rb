@@ -1,7 +1,6 @@
 class LoginsController < ApplicationController
   def new
-    user = User.find_by(id: session[:user_id])
-    redirect_to posts_path if user
+    redirect_to posts_path if @current_user
     @user = User.new
   end
 
@@ -24,7 +23,4 @@ class LoginsController < ApplicationController
     params.require(:user).permit(:email, :password)
   end
 
-  def logged_in?
-    
-  end
 end

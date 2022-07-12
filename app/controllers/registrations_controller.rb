@@ -1,7 +1,6 @@
 class RegistrationsController < ApplicationController
   def new
-    user = User.find_by(id: session[:user_id])
-    redirect_to posts_path if user
+    redirect_to posts_path if @current_user
     @user = User.new
   end
 
