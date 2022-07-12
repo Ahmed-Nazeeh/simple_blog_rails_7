@@ -1,0 +1,19 @@
+<h1>Show Post</h1>
+
+
+<% if @post %>
+
+        <div> <strong>Title:</strong> <%= @post.title %> </div>
+        <div> <strong>Body:</strong> <%= @post.body %> </div>
+        <div> <strong>Author:</strong> <%= @post.user.email %></div>
+
+        <%= link_to "Edit Post", edit_post_path(@post.id)%>
+        <%= link_to 'Destroy', @post,
+                    data: {"turbo-method": :delete,
+                        controller: "posts",
+                        "confirmation-message-value": 'Are you sure?',
+                        action: "posts#destroy"
+                    } %>
+<% else %>
+    <p> Post is empty</p>
+<% end %>

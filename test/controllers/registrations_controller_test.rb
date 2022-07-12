@@ -1,13 +1,13 @@
 require "test_helper"
 
-class UsersControllerTest < ActionDispatch::IntegrationTest
+class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get users_new_url
+    get registrations_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get users_create_url
+    get registrations_create_url
     assert_response :success
   end
 end

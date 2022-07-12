@@ -1,0 +1,21 @@
+<h1>Posts list</h1>
+
+
+<% if @posts %>
+    <% @posts.each do |post| %>
+        <div> <strong>Title:</strong> <%= post.title %> </div>
+        <div> <strong>Author:</strong> <%= post.user.email %></div>
+ 
+        <%= link_to "Edit Post", edit_post_path(post.id)%>
+        <%= link_to "Show Post", post_path(post.id)%>
+        <%= link_to 'Destroy', post,
+              data: {"turbo-method": :delete,
+                controller: "posts",
+                "confirmation-message-value": 'Are you sure?',
+                action: "posts#destroy"
+              } %>
+
+    <% end %>
+<% else %>
+    <p> There are no any post yet</p>
+<% end %>
