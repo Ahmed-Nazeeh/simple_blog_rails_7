@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       flash[:notice] = " Your post has been updated"
       redirect_to posts_path
     else
-      flash[:alert] = "somthing wrong post not saved"
+      flash[:alert] = "somthing wrong, post did not saved"
       render edit_post_path, status: :unprocessable_entity
     end
   end

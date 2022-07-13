@@ -23,7 +23,7 @@
 }
 
 .align-lnk {
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
 
 }
@@ -33,7 +33,7 @@
     font-weight: bold;
     text-decoration: none;
 
-    background-color: #4CAF50; /* Green */
+    background-color: #000000; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -42,12 +42,12 @@
 
 .tbar {
     padding-top: 10px;
-    background-color: #4CAF50; /* Green */
+    background-color: #000000; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
     text-align-last: justify;
-
+    margin-bottom: 10px;
 }
 
 
@@ -63,4 +63,24 @@
     padding: 20px;
     width: 200px;
     height: 150px;
+}
+
+.flash-notice {
+    text-align: left; 
+    padding-top: 15px;
+    color: white;
+}
+.flash-notice span { 
+    background-color: rgb(52, 197, 91); 
+    padding: 10px 10px;
+}
+
+.flash-alert {
+    text-align: left; 
+    padding-top: 15px;
+    color: white;
+}
+.flash-alert span { 
+    background-color: rgb(197, 52, 52); 
+    padding: 10px 10px;
 }
